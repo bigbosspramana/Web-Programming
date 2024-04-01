@@ -1,0 +1,42 @@
+h1{
+    font-size : 2em;
+    font-family : Verdana, Geneva, Tahoma, sans-serif;
+    color: #DE101D;
+}
+
+p {
+    font-size: 14px;
+    color: #850F16;
+    font-family: Garamond, 'Times New Roman', serif;
+}
+
+img {
+    width:200px;
+    height:200px;
+    border-radius:20%;
+    border: 2px solid black;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: #DB5B0B;
+    border-radius: 50%;
+    border: 2px solid #8F3C09;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    margin: auto 0 ;
+}
+
+.link {
+    background-color: #000;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+}
