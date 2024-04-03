@@ -1,0 +1,107 @@
+* {
+    background-color: lightskyblue;
+    color: white;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+}
+
+nav {
+    flex: 1 0 30%;
+    padding: 40px;
+    background-color: rgb(162, 5, 5);
+    text-align: center;
+}
+
+.logo {
+    flex: 1 0 30%;
+    padding: 40px;
+    background-color: rgb(162, 5, 5);
+    text-align: center;
+}
+
+header {
+    background-color: rgb(75, 75, 103);
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+}
+
+article {
+    background-color: rgb(151, 213, 139);
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+}
+
+.figure {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figure1 {
+    background-color: rgb(163, 21, 239);
+    flex: 1 0 30%;
+    padding: 80px;
+    height: 40em;
+    text-align: center;
+    align-content: center;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 30px solid white;
+    border-left: 15px solid white;
+}
+
+.figure2 {
+    background-color: rgb(172, 218, 4);
+    flex: 1 0 30%;
+    padding: 80px;
+    height: 40em;
+    text-align: center;
+    align-content: center;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 30px solid white;
+    border-left: 30px solid white;
+}
+
+.figure3 {
+    background-color: rgb(207, 94, 74);
+    flex: 1 0 30%;
+    padding: 80px;
+    height: 40em;
+    text-align: center;
+    align-content: center;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 15px solid white;
+    border-left: 30px solid white;
+}
+
+footer {
+    background-color: rgb(101, 152, 144);
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    clear: both;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+}
