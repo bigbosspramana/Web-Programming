@@ -1,0 +1,237 @@
+/* Color Palette */
+/* Putih : #F1F6F9 */
+/* Biru Langit Malam (Hujan) : #394867 */
+/* Biru Langit Malma (Bersih) : #212A3E */
+/* Abu-Abu : #9BA4B5 */
+
+
+/* Page Index */
+body {
+    background-color: #F1F6F9;
+}
+
+nav.navbar {
+    --bs-navbar-padding-y: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px); 
+}
+
+nav .bg-navbar {
+    height: 80px;
+}
+
+a.nav-link {
+    background-color: #3948676f;
+    padding: 20px;
+}
+
+.container-fluid.bg-navbar {
+    background-color: #394867;
+}
+
+a.navbar-brand {
+    color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+a.navbar-brand p {
+    margin: 0 0 0 5px;
+}
+
+li.nav-item {
+    margin-right: 15px;
+}
+
+li.nav-item a {
+    color: white;
+    margin: 0;
+}
+
+li.nav-item a:hover {
+    color: rgb(162, 162, 162);
+}
+
+li.nav-item a:active { 
+    background-color: #212A3E;
+    border-radius: 5px;
+    color: white;
+}
+
+button.navbar-toggler {
+    background-color: rgb(224, 224, 224);
+    padding: 5px;
+    border-radius: 7px;
+}
+
+form.d-flex {
+    margin-left: 30%;
+}
+
+form.d-flex button {
+    margin: 0;
+    color: white;
+    background-color: #ababab;
+}
+
+form.d-flex input{
+    width: 250px;
+}
+
+
+.carousel-inner {
+    border-radius: 25px;
+    box-shadow: 0 10px 10px 5px rgb(91, 91, 91);
+    margin: 1%; 
+    margin-top: 13%;
+}
+
+.carousel-item {
+    width: 100%;
+    object-fit: contain;
+}
+
+.carousel-item img {
+    width: 128.5% !important;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.about {
+    margin: 10% auto;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    padding: 50px;
+    display: flex;
+}
+
+.about-layout {
+    display: flex;
+    justify-content: center;
+}
+
+.about .left-about {
+    /* width: 50%; */
+    margin-left: 3%; 
+    margin-top: 2.5%;
+}
+
+.left-about p {
+    margin-top: 5%;
+}
+
+.about .right-about {
+    margin-left: 3;
+}
+
+.right-about img.img1 {
+    border-radius: 10px;
+    /* margin-right: %; */
+}
+
+.right-about img.img2 {
+    border-radius: 10px;
+}
+
+h2.title-card {
+    margin: 5% 0 2%;
+    text-align: center;
+}
+
+.card1 {
+    margin-top: 10%;
+    width: 100%;
+}
+
+.latest-news .card-space {
+    margin-right: 20px;
+}
+
+.latest-news .card-space-1 {
+    margin-left: 20px;
+}
+
+.dropdown-menu li a {
+    color: black;
+}
+
+.carousel-control-prev i, .carousel-control-next i {
+    font-size: 30px;
+    color: rgb(255, 255, 255)
+}
+
+.contact {
+    display:flex;
+    justify-content: center;
+    margin-left : 3%;
+}
+
+.contact0 {
+    margin: 3%;
+}
+
+.contact1 {
+    margin: 3%;
+}
+
+.contact2 {
+    margin: 3%;
+}
+
+.card-footer a i {
+    font-size: 30px;
+}
+
+.card-footer a p {
+    margin-bottom: 1%;
+}
+
+.row {
+    width: 100%;
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden noo-scrollbar; */ 
+}
+
+.contact {
+    margin-top: 5%;
+    padding: 30px;
+}
+
+.card h2 {
+    margin: 2%;
+}
+
+.social-buttons {
+    margin: 10% auto;
+    width: 50%;
+}
+
+.row {
+    justify-content: center;
+    margin-bottom: 2%;
+    margin-right: 5%;
+}
+
+form .mb-3 {
+    text-align: left;
+}
+
+button.btn {
+    margin-left: 85%;
+}
+
+.card.contact {
+    margin-left: 0;
+}
+
+
