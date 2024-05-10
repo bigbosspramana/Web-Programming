@@ -1,0 +1,123 @@
+label, p.h3 {
+    color : white;
+}
+
+.layer1 {
+    background-color: #2e3d63;
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px 25px 25px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.layer1:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.layer-border1 {
+    border: 2px solid white;
+    padding: 25px 30px;
+    margin-top: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px white;
+}
+
+
+p.h3 {
+    text-align: center;
+}
+
+p.h4 {
+    color: whitesmoke;
+}
+
+label.form-label {
+    margin-top: .5rem;
+}
+
+label.male {
+    width: 75px;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+label span {
+    color: orangered;
+}
+
+button.btn {
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 2%;
+    border-radius: 10px;
+    background-color: #81f2b6;
+    color:azure;
+    display: flex;
+    margin-left: auto;
+    border: none;
+}
+
+button.btn:hover {
+    background-color: #3adb83;
+    color:azure;
+    border: none;
+}
+
+button.btn:active {
+    background-color: #14f379 !important;
+    border: none;
+    color: white !important;
+}
+
+input.out-label {
+    transition: 0.5s;
+}
+
+input.out-label:focus {
+    transform: scale(1.02,1.02);
+    box-shadow: 0 0 8px white;
+}
+
+select.out-label:focus {
+    transform: scale(1.02,1.02);
+    box-shadow: 0 0 8px white;
+}
+
+button.btn i {
+    font-size: 15px;
+    margin: auto 5px;
+}
+
+.image-size {
+    width: 20%;
+    min-width: 100px;
+}
+
+#layer-border-output {
+    color: rgb(255, 255, 255);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 0 5px white;
+}
+
+div.photo {
+    background-color: rgb(188, 188, 188);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+p.output {
+    margin-top: 3%;
+    text-align: left;
+} 
+
+#layer-border-output p {
+    background-color: rgb(188, 188, 188);
+    padding: 10px;
+    border-radius: 15px;
+}

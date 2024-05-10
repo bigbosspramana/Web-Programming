@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Alvin Yuga Pramana - Tugas Javascript</title>
+</head>
+
+<body style="background-color : #192241">
+
+    <div class="layer1">
+        <p class="h3">Form Data</p>
+        <div class="layer-border1">
+            <p class="h4">Personal Data</p>
+            <form id="myForm" action="#">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <label for="inputName" class="form-label label-name">Name<span> *</span></label>
+                        <input type="text" class="form-control out-label" id="inputName" placeholder="Name" aria-label="Name">
+                    </div>
+                    <div class="col-xl-2 col-md-3" role="group" aria-label="Basic radio toggle button group">
+                        <label for="inputGender" class="form-label">Gender<span> *</span></label><br>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" value="Male" class="btn-check out-label" name="btnradio" id="btnradio1" autocomplete="off"
+                                checked>
+                            <label class="btn btn-outline-primary" for="btnradio1">Male</label>
+
+                            <input type="radio" value="Female" class="btn-check out-label" name="btnradio" id="btnradio2" autocomplete="off">
+                            <label class="btn btn-outline-danger" for="btnradio2">Female</label>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-9">
+                        <label for="inputDate" class="form-label">Date<span> *</span></label>
+                        <input type="date" class="form-control out-label" id="inputDate" placeholder="Date" aria-label="Date">
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="inputEmail" class="form-label">Email<span> *</span></label>
+                        <input type="text" class="form-control out-label" id="inputEmail" placeholder="Email" aria-label="Email">
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="inputPhoneNumber" class="form-label">Phone Number<span> *</span></label>
+                        <input type="text" class="form-control out-label" id="inputPhoneNumber" placeholder="Phone Number">
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="inputAddress" class="form-label">Address<span> *</span></label>
+                        <input type="text" class="form-control out-label" id="inputAddress" placeholder="Address">
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="jurusan" class="form-label">Program of Interest<span> *</span></label>
+                        <select class="form-select out-label" aria-label="Default select example">
+                            <option value="IMT">IMT</option>
+                            <option value="MAN">MAN</option>
+                            <option value="VCD">VCD</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="fatherName" class="form-label">Father's Name<span> *</span></label>
+                        <input type="text" class="form-control out-label" id="fatherName" placeholder="Father Name">
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="motherName" class="form-label">Mother's Name<span> *</span></label>
+                        <input type="text" class="form-control out-label" id="motherName" placeholder="Mother Name">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="inputPhoto" class="form-label">Upload Photo<span> *</span></label>
+                    <input type="file" class="form-control" id="inputPhoto" aria-describedby="inputPhoto"
+                        aria-label="Upload" accept="image/*">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-send w-10" value="submit">
+                        Send
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <p class="h3 output">Output Data</p>
+        <div id="layer-border-output">
+
+        </div>
+    </div>
+    
+    <script>
+        var form = document.getElementById('myForm'); // Memperbaiki ID form yang dipanggil
+
+        // Ambil semua input yang perlu divalidasi
+        var inputsToValidate = document.querySelectorAll('#inputName, #inputDate, input[type="text"][placeholder="Email"], #inputPhoneNumber, #inputAddress, #fatherName, #motherName');
+
+        // Tambahkan event listener blur ke setiap input untuk validasi
+        inputsToValidate.forEach(function (input) {
+            input.addEventListener('blur', function () {
+                if (!input.value) {
+                    input.style.borderColor = 'red'; // Ubah warna border menjadi merah
+                    input.style.borderWidth = '2px'; // Ubah border width menjadi lebih besar
+                    input.setAttribute('placeholder', 'Wajib Diisi'); // Tambahkan placeholder untuk menunjukkan pesan
+                } else {
+                    input.style.borderColor = ''; // Kembalikan warna border ke default jika sudah diisi
+                    input.removeAttribute('placeholder'); // Hapus placeholder pesan
+                }
+            });
+        });
+
+        // Menambahkan event listener untuk event submit pada form
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Menghentikan pengiriman form bawaan
+
+            // Inisialisasi variabel isValid sebagai true
+            var isValid = true;
+            // Iterasi melalui setiap input yang perlu divalidasi
+            inputsToValidate.forEach(function (input) {
+                if (!input.value) { // Jika input kosong
+                    isValid = false; // Set isValid menjadi false
+                    input.style.borderColor = 'red'; // Ubah warna border menjadi merah
+                    input.setAttribute('placeholder', 'Wajib Diisi'); // Tambahkan placeholder 'Wajib Diisi'
+                } else { // Jika input terisi
+                    input.style.borderColor = ''; // Kembalikan warna border ke default
+                    input.removeAttribute('placeholder'); // Hapus placeholder
+                }
+            });
+        });
+
+        // Menambahkan event listener untuk event submit pada form
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Menghentikan pengiriman form bawaan
+            // Mendapatkan elemen output untuk menampilkan data
+            var outputElement = document.getElementById('layer-border-output');
+            // Mengosongkan konten dari elemen output
+            outputElement.innerHTML = "";
+
+            // Mengambil nilai dari input nama
+            var nama = document.getElementById('inputName').value;
+            // Mengambil nilai dari input gender yang dipilih
+            var gender = document.querySelector('input[name="btnradio"]:checked').value;
+            // Mengambil nilai dari input tanggal lahir
+            var tanggalLahir = document.getElementById('inputDate').value;
+            // Mengambil nilai dari input email
+            var email = document.getElementById('inputEmail').value; // Memperbaiki pengambilan nilai email
+            // Mengambil nilai dari input nomor telepon
+            var phoneNumber = document.getElementById('inputPhoneNumber').value;
+            // Mengambil nilai dari input alamat
+            var address = document.getElementById('inputAddress').value;
+            // Mengambil nilai dari input program studi
+            var programStudi = document.querySelector('select').value;
+            // Mengambil nilai dari input nama ayah
+            var fatherName = document.getElementById('fatherName').value;
+            // Mengambil nilai dari input nama ibu
+            var motherName = document.getElementById('motherName').value;
+            // Mengambil file foto dari input
+            var photo = document.getElementById('inputPhoto').files[0];
+
+            // Validasi email dengan domain @gmail.com
+            if (!email || !email.endsWith('@gmail.com')) {
+                alert('Email harus diisi dengan menggunakan @gmail.com!');
+                return; // Hentikan proses pengiriman jika email tidak valid
+            }
+
+            // Validasi phone number hanya mengandung angka dan karakter '+'
+            if (!phoneNumber || !/^[0-9+]+$/.test(phoneNumber)) {
+                alert('Phone Number harus diisi dengan angka!');
+                return; // Hentikan proses pengiriman jika phone number tidak valid
+            }
+
+            // Periksa apakah semua input telah diisi
+            if (!nama || !gender || !tanggalLahir || !email || !phoneNumber || !address || !programStudi || !fatherName || !motherName || !photo) {
+                alert('Anda Belum Memasukkan Semua Data!');
+                return; // Hentikan proses pengiriman jika ada input yang belum diisi
+            }
+
+            // Menampilkan nilai input di dalam elemen dengan id "layer-border-output" dengan desain yang responsive
+            outputElement.innerHTML = `
+                <div class="container">
+                    <h3>Personal Data</h3>
+                    <div>
+                        <p class="col-12 col-sm-12">Nama: ${nama}</p>
+                        <p class="col-12 col-sm-12">Gender: ${gender}</p>
+                        <p class="col-12 col-sm-12">Tanggal Lahir: ${tanggalLahir}</p>
+                        <p class="col-12 col-sm-12">Email: ${email}</p>
+                        <p class="col-12 col-sm-12">Phone Number: ${phoneNumber}</p>
+                        <p class="col-12 col-sm-12">Address: ${address}</p>
+                        <p class="col-12 col-sm-12">Program Studi: ${programStudi}</p>
+                        <p class="col-12 col-sm-12">Father's Name: ${fatherName}</p>
+                        <p class="col-12 col-sm-12">Mother's Name: ${motherName}</p>
+                        <p class="col-12 col-sm-12 no-bg">Photo: </p>
+                    </div>
+                </div>
+            `;
+            // Membuat instance dari FileReader untuk membaca data file
+            var reader = new FileReader();
+            // Membaca data sebagai URL yang dapat diwakili sebagai base64
+            reader.readAsDataURL(photo);
+            // Event yang terjadi setelah load data selesai
+            reader.onload = function(){
+                // Menyimpan data gambar ke localStorage
+                localStorage.setItem("image", reader.result);
+                // Membuat elemen img baru
+                var fotoElemen = document.createElement("img");
+                // Mengatur sumber gambar dari localStorage
+                fotoElemen.setAttribute("src", localStorage.getItem("image"));
+                // Menambahkan class untuk styling gambar
+                fotoElemen.setAttribute("class", "image-size");
+                // Menambahkan elemen gambar ke outputElement
+                outputElement.appendChild(fotoElemen);
+            };
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
