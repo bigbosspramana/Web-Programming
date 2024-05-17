@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shape Containers</title>
+</head>
+<body style="background-color:rgb(92, 137, 167)">
+
+    <!-- Judul halaman -->
+    <h1 class="title">Shape Containers</h1>
+    <!-- Wrapper untuk kontainer bentuk dan kontrol -->
+    <div id="shapeContainerWrapper" class="containershape">
+        <!-- Kontainer untuk menampilkan bentuk -->
+        <div id="shapeContainer"></div>
+        <!-- Kontrol untuk mengatur bentuk -->
+        <div id="controls">
+            <!-- Kontrol untuk memilih jenis dan warna bentuk -->
+            <div class="controltype">
+                <!-- Pilihan jenis bentuk -->
+                <label for="shapeType">Shape Type:</label>
+                <select id="shapeType">
+                    <option value="square">Square</option>
+                    <option value="circle">Circle</option>
+                </select>
+
+                <!-- Pilihan warna bentuk -->
+                <label for="shapeColor">Color:</label>
+                <input type="color" id="shapeColor" value="#ff0000">
+
+                <!-- Input untuk ukuran bentuk -->
+                <label for="shapeSize">Size</label>
+                <input type="number" id="shapeSize" value="0">
+            </div>
+            <!-- Tombol untuk menambah dan menghapus bentuk -->
+            <div class="controlshape">
+                <button id="addShape">Add Shape</button>
+                <button id="removeShape">Remove Shape</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Flag to check if an animation is currently in progress
+            let animationInProgress = false;
+
+            // Event handler for adding a new shape
+            $('#addShape').click(function() {
+                // Check if an animation is not already in progress
+                if (!animationInProgress) {
+                    // Retrieve the size of the shape from the input
+                    const shapeSize = $('#shapeSize').val();
+                    // Validate the size input
+                    if (shapeSize <= 0) {
+                        alert('Size yang Anda masukkan Salah');
+                        return;
+                    }
+
+                    // Set the flag to true indicating animation is in progress
+                    animationInProgress = true;
+                    // Retrieve the type and color of the shape from the form
+                    const shapeType = $('#shapeType').val();
+                    const shapeColor = $('#shapeColor').val();
+                    // Create a new shape element with the specified properties
+                    const shape = $('<div></div>').addClass(`shape ${shapeType}`).css({
+                        'background-color': shapeColor,
+                        'width': `${shapeSize}px`,
+                        'height': `${shapeSize}px`,
+                        'margin-left': '-1px'
+                    });
+
+                    // Append the new shape to the container and animate it
+                    shape.appendTo('#shapeContainer').animate({marginLeft: '5px', opacity: 1}, 500, function() {
+                        // Reset the flag after animation completes
+                        animationInProgress = false;
+                    });
+                }
+            });
+
+            // Event handler for removing the last shape
+            $('#removeShape').click(function() {
+                // Check if an animation is not already in progress
+                if (!animationInProgress) {
+                    // Set the flag to true indicating animation is in progress
+                    animationInProgress = true;
+                    // Select the last shape element in the container
+                    const lastShape = $('#shapeContainer .shape').last();
+                    // Check if there is at least one shape to remove
+                    if (lastShape.length) {
+                        // Fade out the last shape and remove it after the animation
+                        lastShape.fadeOut(500, function() {
+                            $(this).remove();
+                            // Reset the flag after animation completes
+                            animationInProgress = false;
+                        });
+                    } else {
+                        // Reset the flag if no shapes are present
+                        animationInProgress = false;
+                    }
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
